@@ -42,25 +42,50 @@ const LudoBoard = () => {
       {/* Middle Row */}
       <div className="middle_row">
         {/* Left Horizontal Ladder */}
-        <div className="h_lad">
-          {[...Array(3)].map((_, rowIndex) => (
-            <div key={rowIndex} className="h_lad_row">
-              {[...Array(6)].map((_, cellIndex) => {
-                const isRed = (
-                  (rowIndex === 0 && cellIndex === 1) ||
-                  (rowIndex === 1 && cellIndex < 5) ||
-                  (rowIndex === 2 && cellIndex === 2)
-                );
-                const isStar = (rowIndex === 0 && cellIndex === 1) || (rowIndex === 2 && cellIndex === 2);
-                return (
-                  <div key={cellIndex} className={`h_lad_cell ${isRed ? 'red' : ''}`}>
-                    {isStar && <span className="star">&#9733;</span>}
-                  </div>
-                );
-              })}
-            </div>
-          ))}
-        </div>
+     {/* <div className="h_lad">
+  {[...Array(3)].map((_, rowIndex) => (
+    <div key={rowIndex} className="h_lad_row">
+      {[...Array(6)].map((_, i) => 5 - i).map((cellIndex) => {
+        const isRed = (
+          (rowIndex === 0 && cellIndex === 1) ||
+          (rowIndex === 1 && cellIndex > 0) ||
+          (rowIndex === 2 && cellIndex === 2)
+        );
+        const isStar = (rowIndex === 0 && cellIndex === 1) || (rowIndex === 2 && cellIndex === 2);
+        return (
+          <div key={cellIndex} className={`h_lad_cell ${isRed ? 'red' : ''}`}>
+            {isStar && <span className="star">&#9733;</span>}
+          </div>
+        );
+      })}
+    </div>
+  ))}
+</div> */}
+
+
+
+<div className="h_lad">
+  {[...Array(3)].map((_, rowIndex) => (
+    <div key={rowIndex} className="h_lad_row">
+      {[...Array(6)].map((_, i) => 5 - i).map((cellIndex) => {
+        const isRed = (
+          (rowIndex === 0 && cellIndex === 4) ||
+          (rowIndex === 1 && cellIndex < 5) ||
+          (rowIndex === 2 && cellIndex === 3)
+        );
+        const isStar = (rowIndex === 0 && cellIndex === 4) || (rowIndex === 2 && cellIndex === 3);
+        return (
+          <div key={cellIndex} className={`h_lad_cell ${isRed ? 'red' : ''}`}>
+            {isStar && <span className="star">&#9733;</span>}
+          </div>
+        );
+      })}
+    </div>
+  ))}
+</div>
+
+
+
 
         {/* Center Triangle */}
         <div className="ludo_home"></div>
